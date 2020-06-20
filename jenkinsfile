@@ -1,33 +1,36 @@
-pipeline{
-
-     agent any
-
-          stages{
-
-               stage(‘Build’)
-
-  {
-
-       steps{//}
-
-  }
-
-               stage(‘Test’)
-
-  {
-
-         steps{//}
-
-  }
-
-                stage(‘Deploy’)
-
-  {
-
-          steps{//}
-
-  }
-
-             }
-
+pipeline {
+	agent any
+	stages {
+		stage('echo') {
+			steps {
+				echo "Hello World"
+			}
+		}
+		stage('checkout'){
+		    steps {
+		        git 'https://github.com/Padmapriyak1/Helloworld'
+		    }
+	    }
+		stage('clean'){
+		    steps {
+		        bat 'ant clean'; 
+		    }
+		}
+		stage('compile'){
+		    steps{
+		        bat 'ant compile';
+		    }
+		}
+		stage('jar'){
+		    steps{
+		        bat 'ant jar';
+		    }
+		}
+		stage('run'){
+		    steps{
+		        bat 'ant run'
+		    }
+		}
+		     
+    }
 }
