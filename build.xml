@@ -12,8 +12,8 @@
 
     <target name="clean">
         <delete dir="${build.dir}"/>
-	<echo message="first Param: ${params.firstparam}"/>
-        <echo message="second Param: ${params.secondparam}"/>
+	<echo message="first Param: ${firstparam}"/>
+        <echo message="second Param: ${secondparam}"/>
 	
     </target>
 
