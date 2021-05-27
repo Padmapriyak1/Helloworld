@@ -14,6 +14,7 @@
         <delete dir="${build.dir}"/>
 	<echo message="first Param: ${firstparam}"/>
         <echo message="second Param: ${secondparam}"/>
+	<echo message="sum: (1000+${secondparam})"/> 
     </target>
 
     <target name="compile">
